@@ -1,10 +1,11 @@
 import logo from './logo.svg';
-import './App.css';
+import './scss/app.scss';
+import "bootstrap/scss/bootstrap.scss";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
+  return ( 
+    <div className="App container">
+      <header className="App-header col-md-12">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
