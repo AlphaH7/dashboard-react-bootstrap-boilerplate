@@ -1,0 +1,55 @@
+$primary: #5e5df5;
+$secondary: #00d2e0;
+$white: #fff;
+$gray: #aaadc9;
+$transparent: transparent;
+
+$animation-timing: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+$left-panel-width: 70px;
+
+$colors: (
+    primary: $primary,
+    secondary: $secondary,
+    white: $white,
+    gray: $gray,
+    transparent: $transparent
+);
+
+$spacing: (
+  0: 0px,
+  1: 2px,
+  2: 4px,
+  3: 6px,
+  4: 8px,
+  5: 10px,
+  6: 12px,
+  7: 14px,
+  8: 16px,
+  9: 18px,
+  10: 20px,
+  11: 22px,
+  12: 24px,
+  13: 26px,
+  14: 28px,
+  15: 30px,
+);
+
+$font-sizes: (
+  xs: 8px,
+  sm: 14px,
+  md: 16px,
+  lg: 18px,
+  xl: 20px,
+  2xl: 24px,
+  3xl: 30px,
+  4xl: 36px
+);
+
+$breakpoints: (
+  xs: 0px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);

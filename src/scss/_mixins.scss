@@ -1,0 +1,118 @@
+// _mixins.scss
+
+// Breakpoint mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: 575.98px) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (min-width: 576px) and (max-width: 767.99px) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: 768px) and (max-width: 991.99px) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: 992px) and (max-width: 1199.99px) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// Mixins for padding
+@mixin padding-x($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin padding-y($value) {
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+// Mixins for margin
+@mixin margin-x($value) {
+  margin-left: $value;
+  margin-right: $value;
+}
+
+@mixin margin-y($value) {
+  margin-top: $value;
+  margin-bottom: $value;
+}
+
+// Generate utility classes
+@each $key, $value in $spacing {
+  .px-#{$key} {
+    @include padding-x($value);
+  }
+  .py-#{$key} {
+    @include padding-y($value);
+  }
+  .pt-#{$key} {
+    padding-top: $value;
+  }
+  .pb-#{$key} {
+    padding-bottom: $value;
+  }
+  .pl-#{$key} {
+    padding-left: $value;
+  }
+  .pr-#{$key} {
+    padding-right: $value;
+  }
+
+  .mx-#{$key} {
+    @include margin-x($value);
+  }
+  .my-#{$key} {
+    @include margin-y($value);
+  }
+  .mt-#{$key} {
+    margin-top: $value;
+  }
+  .mb-#{$key} {
+    margin-bottom: $value;
+  }
+  .ml-#{$key} {
+    margin-left: $value;
+  }
+  .mr-#{$key} {
+    margin-right: $value;
+  }
+}
+
+// Background colors
+@mixin bg-color($color) {
+  background-color: $color;
+}
+
+@each $key, $value in $colors {
+  .bg-#{$key} {
+    @include bg-color($value);
+  }
+}
+
+// Text colors
+@mixin text-color($color) {
+  color: $color;
+}
+
+@each $key, $value in $colors {
+  .text-#{$key} {
+    @include text-color($value);
+  }
+}
+
+// Font sizes
+@each $key, $value in $font-sizes {
+  .text-#{$key} {
+    font-size: $value;
+  }
+}

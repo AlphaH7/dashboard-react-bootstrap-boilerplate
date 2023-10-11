@@ -1,5 +1,24 @@
+@import "variables";
+@import "mixins";
+@import "helper";
+@import "layout";
 
-$primary: #0b3d91;
+
+@import "bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html, body, #root{
+  @extend .h-full;
+}
 
 .App {
   text-align: center;

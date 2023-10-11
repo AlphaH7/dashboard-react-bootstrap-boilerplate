@@ -1,0 +1,93 @@
+// Flex utilities
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+// Flex item alignment
+.items-start {
+  align-items: flex-start;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+// Justify content
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+// Border radius
+.rounded-sm {
+  border-radius: 2px;
+}
+
+.rounded {
+  border-radius: 4px;
+}
+
+.rounded-md {
+  border-radius: 8px;
+}
+
+.rounded-lg {
+  border-radius: 16px;
+}
+
+.rounded-full {
+  border-radius: 9999px; // To ensure fully rounded corners regardless of the element's size
+}
+
+.font-normal{
+    font-weight: 400;
+}
+
+.font-light{
+    font-weight: 300;
+}
+
+.font-bold{
+    font-weight: 700;
+}
+
+// height width helper classes
+
+.h-full{
+    height: 100%;
+}
+
+.w-full{
+    width: 100%;
+}
+
+.overflow-auto{
+    overflow: auto;
+}

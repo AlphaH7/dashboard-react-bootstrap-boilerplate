@@ -1,0 +1,95 @@
+.main-layout {
+  @extend .h-full;
+  background: #efefef;
+
+  .nav-ctr {
+    height: 73px;
+  }
+
+  .glow-on-hover {
+    transition: all 0.35s $animation-timing;
+    &:hover {
+      filter: drop-shadow(0px 0px 3px $white);
+    }
+  }
+
+  .nav-logo {
+    background-image: url("https://www.alistier.dev/05dafbb6dd374c290cec3c97d0c158cb.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    @extend .glow-on-hover;
+  }
+
+  .nav-routes {
+    border: 0;
+    text-decoration: none;
+    cursor: pointer;
+    @extend .glow-on-hover;
+  }
+
+  .global-search-ctr {
+    position: relative;
+
+    .global-search {
+      background: rgba(0, 0, 0, 0.23);
+      border: 0px;
+      outline: none;
+      border-radius: 15px;
+      width: 300px;
+      color: $white;
+      &::placeholder {
+        color: $primary;
+        font-size: 15px;
+      }
+    }
+    .search-icon {
+      position: absolute;
+      right: 8px;
+      top: 16px;
+    }
+  }
+
+  .main-view-ctr {
+    height: calc(100% - 73px);
+
+    .left-pane-ctr {
+      width: $left-panel-width;
+      background: $white;
+      height: 100%;
+
+      .pane-element {
+        @extend .flex;
+        @extend .flex-row;
+        @extend .items-center;
+        @extend .justify-center;
+        height: 50px;
+        width: 100%;
+        cursor: pointer;
+
+        & > * {
+          color: $gray;
+          fill: $gray;
+          transition: all 0.5s;
+          width: 25px !important;
+          height: 25px !important;
+          &:hover{
+            color: black;
+            fill: black;
+          }
+        }
+      }
+    }
+
+    .main-view {
+      width: calc(100% - 70px) !important;
+      @extend .h-full;
+      @extend .overflow-auto;
+      @extend .flex;
+      @extend .flex-row;
+      @extend .justify-center;
+    }
+  }
+}
