@@ -1,7 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../Layout/Layout";
+import { getRecentPosts } from "../../utils/ApiHelper";
+import ApiClient from "../../utils/ApiClient";
 
 function Home() {
+
+  const getRecentUserPosts = async () => {
+    try {
+      const response = await getRecentPosts();
+      console.log(response);
+    } catch (apierror) {
+      const client = new ApiClient();
+      client.processError(apierror);
+    }
+  }
+
+  useEffect(
+    () => {
+      getRecentUserPosts()
+    }, []
+  )
+
   return (
     <Layout>
       <div className="w-full">
