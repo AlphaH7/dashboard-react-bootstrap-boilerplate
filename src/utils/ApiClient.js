@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = "https://ax-pilot-interface-hanq5gyuj-alphah7.vercel.app/api/";
+const API_URL = "https://ax-pilot-interface-a2mwxcvet-alphah7.vercel.app/api/";
 
 class ApiClient {
   constructor() {

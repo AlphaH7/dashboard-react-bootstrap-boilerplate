@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
-import { getNewConnections } from "../../utils/ApiHelper";
+import { getQuests } from "../../utils/ApiHelper";
 import ApiClient from "../../utils/ApiClient";
 import UserProfileImage from "../UserProfileImage/UserProfileImage";
+import GroupProfileImage from "../GroupProfileImage/GroupProfileImage";
+import QuestProfileImage from "../QuestProfileImage/QuestProfileImage";
 
-function NewMembersSection() {
+function QuestsListing() {
   const [userConnections, setUserConnections] = React.useState(null);
 
   const getUserNewConnections = async () => {
     try {
-      const response = await getNewConnections();
+      const response = await getQuests();
       console.log(response.newConnections);
       setUserConnections(response.newConnections);
     } catch (apierror) {
@@ -27,16 +29,16 @@ function NewMembersSection() {
         <img src="loader.svg" alt="loading" className="loader my-15" />
       ) : (
         <>
-          <h2 className="text-md py-2 font-bold">Newest Members</h2>
+          <h2 className="text-md py-2 font-bold">Quests</h2>
           <div className=" mt-2">
             {userConnections.map((data) => (
-              <div className="mt-3 flex items-center animate-from-top" key={data.user}>
-                <div className="pr-4">
-                  <UserProfileImage user={data.user} />
+              <div className="mt-3 flex items-center animate-from-top" key={data.quest}>
+                <div className="pr-4 pb-2">
+                  <QuestProfileImage quest={data.quest} />
                 </div>
                 <div>
-                  <h6 className="font-bold m-0 text-dark-gray">{data.user.name}</h6>
-                  <p className="mb-0 text-dark-gray">{`@${data.user.user_id}`}</p>
+                  <h6 className="font-bold m-0 text-dark-gray">{data.quest.name}</h6>
+                  <p className="mb-0 text-xs text-gray">{`Posted more than ${data.quest.associatedFolks} profile activities in one day`}</p>
                 </div>
               </div>
             ))}
@@ -47,4 +49,4 @@ function NewMembersSection() {
   );
 }
 
-export default NewMembersSection;
+export default QuestsListing;

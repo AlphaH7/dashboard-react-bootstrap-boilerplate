@@ -21,13 +21,6 @@ const getRecentPosts = async (user) => {
   });
 };
 
-const getQuests = async (user) => {
-  return execAPI(async (apiClient) => {
-    const response = await apiClient.get('getquests');
-    return response;
-  });
-};
-
 const getPostFilters = async (user) => {
   return execAPI(async (apiClient) => {
     const response = await apiClient.get('getpostfilters');
@@ -42,9 +35,24 @@ const getNewConnections = async (user) => {
   });
 };
 
+const getGroups = async (user) => {
+  return execAPI(async (apiClient) => {
+    const response = await apiClient.get('getgroups');
+    return response;
+  });
+};
+
+const getQuests = async (user) => {
+  return execAPI(async (apiClient) => {
+    const response = await apiClient.get('getquests');
+    return response;
+  });
+};
+
 export {
   getRecentPosts,
-  getQuests,
   getPostFilters,
-  getNewConnections
+  getNewConnections,
+  getGroups,
+  getQuests
 };

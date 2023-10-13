@@ -16,3 +16,7 @@
   border-top: 2px solid #efefef;
   @extend .mt-4;
 }
+
+.footer-logo{
+  filter: contrast(0.5);
+}

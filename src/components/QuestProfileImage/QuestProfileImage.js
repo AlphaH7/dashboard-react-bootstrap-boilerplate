@@ -1,15 +1,14 @@
 import React from "react";
 
-function UserProfileImage(props) {
+function QuestProfileImage(props) {
   return (
-    <div className="image-ctr">
-      <div className="hex-absolute">{props.user.associatedGroups}</div>
+    <div className="image-ctr">      
       <div className="dp-ctr">
         <div className="hexagon hexagon1">
           <div className="hexagon-in1">
             <div
               className="hexagon-in2"
-              style={{ backgroundImage: `url(${props.user.user_image})` }}
+              style={{ backgroundImage: `url(${props.quest.user_image})` }}
             ></div>
           </div>
         </div>
@@ -18,4 +17,4 @@ function UserProfileImage(props) {
   );
 }
 
-export default UserProfileImage;
+export default QuestProfileImage;

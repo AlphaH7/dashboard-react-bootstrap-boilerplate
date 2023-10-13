@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 import Layout from "../Layout/Layout";
-import { getQuests, getPostFilters } from "../../utils/ApiHelper";
+import { getQuests } from "../../utils/ApiHelper";
 import ApiClient from "../../utils/ApiClient";
 import NewMembersSection from "../NewMembersSection/NewMembersSection";
 import RecentPostsSection from "../RecentPostsSection/RecentPostsSection";
+import PopularGroups from "../PopularGroups/PopularGroups";
+import QuestsListing from "../QuestsListing/QuestsListing";
 
 function Home() {
-
-
-
   const getUserQuests = async () => {
     try {
       const response = await getQuests();
@@ -17,25 +16,28 @@ function Home() {
       const client = new ApiClient();
       client.processError(apierror);
     }
-  }
+  };
 
-
-
-  useEffect(
-    () => {      
-      getUserQuests()
-    }, []
-  )
+  useEffect(() => {
+    getUserQuests();
+  }, []);
 
   return (
     <Layout>
       <div className="w-full max-w-view mx-auto">
         <div className="d-flex flex-row mt-4 justify-between animate-from-top">
-          <img src="/landing_bg.png" alt="Landing Background" className="w-full" />
+          <img
+            src="/landing_bg.png"
+            alt="Landing Background"
+            className="w-full"
+          />
         </div>
         <section className="d-flex flex-row mt-4 justify-between">
           <aside className="flex-col w-25">
             <NewMembersSection />
+            <div className="pt-3">
+              <QuestsListing />
+            </div>
           </aside>
 
           <main className="flex-col flex-grow mx-3 w-50">
@@ -43,19 +45,28 @@ function Home() {
           </main>
 
           <aside className="flex-col w-25">
-            <div className="card rounded p-3">
-              <h2 className="text-md">Notifications</h2>
-              <ul className="list-group mt-2">
-                <li className="list-group-item rounded">Notification 1</li>
-                <li className="list-group-item rounded">Notification 2</li>
-                <li className="list-group-item rounded">Notification 3</li>
-              </ul>
-            </div>
+            <PopularGroups />
           </aside>
         </section>
 
-        <footer className="py-4 bg-secondary text-primary mt-5">
-          <p className="text-center text-xl">Footer Content Here</p>
+        <footer className="py-4 text-primary mt-5 flex justify-center items-center">
+          <div className="nav-logo animate-from-top mr-4 footer-logo" />
+          <div>
+            <p className="mb-0 text-footer-gray text-xs">
+              Made with ♥ by Alistier X.
+            </p>
+            <p className="mb-0 text-footer-gray text-xs">
+              © Copyright 2023 AX{" "}
+              <a
+                className="text-footer-gray"
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.alistier.dev"
+              >
+                www.alistier.dev
+              </a>
+            </p>
+          </div>
         </footer>
       </div>
     </Layout>

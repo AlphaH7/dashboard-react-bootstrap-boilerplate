@@ -59,6 +59,27 @@
       width: $left-panel-width;
       background: $white;
       height: 100%;
+      position: relative;
+
+      .selector-ctr {
+        position: absolute;
+        height: 50px;
+        width: 100%;
+        transition: all 0.5s;
+        @extend .flex;
+        @extend .flex-row;
+        @extend .items-center;
+        @extend .justify-center;
+        @extend .pt-2;
+    
+        .selector {          
+          width: 35px;
+          height: 35px;
+          border-radius: 4px;
+          background: $secondary;
+        }
+      }
+      
 
       .pane-element {
         @extend .flex;
@@ -68,16 +89,24 @@
         height: 50px;
         width: 100%;
         cursor: pointer;
+        z-index: 2;
 
         & > * {
           color: $gray;
           fill: $gray;
           transition: all 0.5s;
-          width: 25px !important;
-          height: 25px !important;
-          &:hover{
+          width:20px !important;
+          height:20px !important;
+          &:hover {
             color: black;
             fill: black;
+          }
+        }
+
+        &.active{
+          & > * {
+            color: $white;
+            fill: $white;
           }
         }
       }
