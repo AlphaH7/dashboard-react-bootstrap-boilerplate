@@ -8,27 +8,27 @@ const SamplePage = (props) => {
     <div className="main-layout">
       <header className="py-1 bg-primary text-secondary flex flex-row justify-between items-center px-2 nav-ctr">
         <div className="flex flex-row items-center">
-          <div className="nav-logo" />
-          <ColumnsGap className="text-white ml-15 glow-on-hover" />
-          <a className="nav-routes text-sm font-normal text-white mr-10 ml-15">
+          <div className="nav-logo animate-from-top" />
+          <ColumnsGap className="text-white ml-15 glow-on-hover animate-on-load" />
+          <a className="nav-routes text-sm font-normal text-white mr-10 ml-15 animate-on-load">
             Home
           </a>
-          <a className="nav-routes text-sm font-normal text-white mx-10">
+          <a className="nav-routes text-sm font-normal text-white mx-10 animate-on-load">
             Features
           </a>
-          <a className="nav-routes text-sm font-normal text-white mx-10">
+          <a className="nav-routes text-sm font-normal text-white mx-10 animate-on-load">
             More
           </a>
         </div>
-        <div className="global-search-ctr">
+        <div className="global-search-ctr animate-on-load">
           <input
             className="global-search px-10 py-6"
             placeholder="Enter your search here..."
           />
           <SearchIcon className="text-primary search-icon" />
         </div>
-        <div>
-          <button class="btn btn-secondary text-white text-xs" type="button">
+        <div className="animate-on-load">
+          <button className="btn btn-secondary text-white text-xs" type="button">
             Login
           </button>
         </div>

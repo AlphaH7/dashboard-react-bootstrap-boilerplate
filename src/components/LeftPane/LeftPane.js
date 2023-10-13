@@ -9,25 +9,25 @@ import { ReactComponent as Fifth } from "bootstrap-icons/icons/basket.svg";
 const LeftPane = (props) => {
   return (
     <div className="left-pane-ctr flex flex-col">
-      <div className="pane-element w-full mt-2">
+      <div className="pane-element w-full mt-2 animate-on-load">
         <First />
       </div>
-      <div className="pane-element w-full mt-2">
+      <div className="pane-element w-full mt-2 animate-on-load">
         <Second />
       </div>
-      <div className="pane-element w-full mt-2">
+      <div className="pane-element w-full mt-2 animate-on-load">
         <Third />
       </div>
-      <div className="pane-element w-full mt-2">
+      <div className="pane-element w-full mt-2 animate-on-load">
         <Fourth />
       </div>
-      <div className="pane-element w-full mt-2">
+      <div className="pane-element w-full mt-2 animate-on-load">
         <Fifth />
       </div>
-      <div className="pane-element w-full mt-2">
+      <div className="pane-element w-full mt-2 animate-on-load">
         <Second />
       </div>
-      <div className="pane-element w-full mt-2">
+      <div className="pane-element w-full mt-2 animate-on-load">
         <Second />
       </div>
     </div>

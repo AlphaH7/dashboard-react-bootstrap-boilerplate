@@ -1,0 +1,45 @@
+.animate-on-load{
+  animation: animate-on-load 0.85s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.animate-from-top {
+  animation: animate-from-top 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.animate-from-bottom {
+  animation: animate-from-bottom 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+@keyframes animate-on-load {
+  0% {
+    transform: translateX(-5px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animate-from-top {
+  0% {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes animate-from-bottom {
+  0% {
+    transform: translateY(45px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+

@@ -1,0 +1,18 @@
+.user-posts-ctr{
+  .filter-header {
+    position: relative;
+    & > span {
+      height: 4px;
+      width: 100%;
+      background-color: $secondary;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+.post-footer{
+  border-top: 2px solid #efefef;
+  @extend .mt-4;
+}

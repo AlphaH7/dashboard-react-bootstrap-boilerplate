@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
 import Layout from "../Layout/Layout";
-import { getRecentPosts } from "../../utils/ApiHelper";
+import { getQuests, getPostFilters } from "../../utils/ApiHelper";
 import ApiClient from "../../utils/ApiClient";
+import NewMembersSection from "../NewMembersSection/NewMembersSection";
+import RecentPostsSection from "../RecentPostsSection/RecentPostsSection";
 
 function Home() {
 
-  const getRecentUserPosts = async () => {
+
+
+  const getUserQuests = async () => {
     try {
-      const response = await getRecentPosts();
+      const response = await getQuests();
       console.log(response);
     } catch (apierror) {
       const client = new ApiClient();
@@ -15,65 +19,27 @@ function Home() {
     }
   }
 
+
+
   useEffect(
-    () => {
-      getRecentUserPosts()
+    () => {      
+      getUserQuests()
     }, []
   )
 
   return (
     <Layout>
-      <div className="w-full">
-        <div className="d-flex flex-row mt-4 justify-between">
+      <div className="w-full max-w-view mx-auto">
+        <div className="d-flex flex-row mt-4 justify-between animate-from-top">
           <img src="/landing_bg.png" alt="Landing Background" className="w-full" />
         </div>
         <section className="d-flex flex-row mt-4 justify-between">
           <aside className="flex-col w-25">
-            <div className="card rounded p-5">
-              <h2 className="text-md">Newest Members</h2>
-              <div className=" mt-2">
-                <div className="rounded">
-                    <h6 className="font-bold m-0">Item 1</h6>
-                    <p>@sandra_stage</p>
-                </div>
-                <div className="rounded">
-                    <h6 className="font-bold m-0">Item 2</h6>
-                    <p>@sandra_stage</p>
-                </div>
-                <div className="rounded">
-                    <h6 className="font-bold m-0">Item 3</h6>
-                    <p>@sandra_stage</p>
-                </div>
-              </div>
-            </div>
+            <NewMembersSection />
           </aside>
 
-          <main className="flex-col flex-grow mx-4">
-            <div className="card rounded p-3 mb-4 d-flex flex-row justify-between">
-              <div>All Updates</div>
-              <div>test</div>
-            </div>
-            <div className="card rounded p-3">
-              <h2 className="text-md">Main Content</h2>
-              <p className="mt-3">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                euismod eu libero et bibendum. Morbi non bibendum erat.
-                Vestibulum lacinia aliquet euismod. Donec consequat, orci ac
-                vulputate leo, sed malesuada purus erat ut ex.
-              </p>
-            </div>
-
-            <div className="d-flex flex-row justify-between mt-4">
-              <div className="card w-45 p-3 rounded">
-                <h3 className="text-md">Content Box 1</h3>
-                <p>More content here...</p>
-              </div>
-
-              <div className="card w-45 p-3 rounded">
-                <h3 className="text-md">Content Box 2</h3>
-                <p>More content here...</p>
-              </div>
-            </div>
+          <main className="flex-col flex-grow mx-3 w-50">
+            <RecentPostsSection />
           </main>
 
           <aside className="flex-col w-25">
