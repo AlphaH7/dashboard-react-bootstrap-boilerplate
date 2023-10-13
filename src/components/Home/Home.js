@@ -25,26 +25,26 @@ function Home() {
   return (
     <Layout>
       <div className="w-full max-w-view mx-auto">
-        <div className="d-flex flex-column flex-md-row mt-sm-4 justify-between animate-from-top">
+        <div className="d-flex flex-column flex-md-row mt-md-4 justify-between animate-from-top">
           <img
             src="/landing_bg.png"
             alt="Landing Background"
             className="w-full d-none d-md-block "
           />
         </div>
-        <section className="d-flex flex-column flex-md-row mt-sm-4 justify-between">
-          <aside className="flex-col w-100 w-md-25">
+        <section className="d-flex flex-column flex-md-row mt-md-4 justify-between">
+          <aside className="flex-col w-md-25">
             <NewMembersSection />
             <div className="pt-3">
               <QuestsListing />
             </div>
           </aside>
 
-          <main className="flex-col flex-grow  w-100 w-md-50 mx-md-3">
+          <main className="flex-col mx-md-3 mt-sm-10">
             <RecentPostsSection />
           </main>
 
-          <aside className="flex-col w-100 w-md-25">
+          <aside className="flex-col w-md-25">
             <PopularGroups />
           </aside>
         </section>

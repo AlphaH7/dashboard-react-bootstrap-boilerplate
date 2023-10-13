@@ -101,15 +101,28 @@
   }
 }
 
-.mt-sm-4{
+.mt-md-4{
   @media (min-width: 576px) {
     margin-top: 2px !important;
+  }
+}
+
+.mt-sm-10{
+  @media (max-width: 576px) {
+    margin-top: 10px !important;
   }
 }
 
 .p-sm-10{
   @media (max-width: 576px) {
     padding: 10px !important;
+  }
+}
+
+.w-md-25{
+  @media (min-width: 576px) {
+    width: 25% !important;
+    min-width: 25% !important;
   }
 }
 
