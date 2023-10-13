@@ -60,6 +60,9 @@
       background: $white;
       height: 100%;
       position: relative;
+      @media (max-width: 575.98px) {
+        width: 50px;
+      }
 
       .selector-ctr {
         position: absolute;
@@ -119,6 +122,10 @@
       @extend .flex;
       @extend .flex-row;
       @extend .justify-center;
+
+      @media (max-width: 575.98px) {
+        width: calc(100% - 50px) !important;
+      }
     }
   }
 }

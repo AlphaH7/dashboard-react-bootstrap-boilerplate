@@ -88,6 +88,31 @@
   width: 100%;
 }
 
+
+.mx-md-3{
+  @media (min-width: 576px) {
+    margin: 0 3px !important;
+  }
+}
+
+.mx-sm-2{
+  @media (max-width: 576px) {
+    margin: 0 2px !important;
+  }
+}
+
+.mt-sm-4{
+  @media (min-width: 576px) {
+    margin-top: 2px !important;
+  }
+}
+
+.p-sm-10{
+  @media (max-width: 576px) {
+    padding: 10px !important;
+  }
+}
+
 .overflow-auto {
   overflow: auto;
 }
