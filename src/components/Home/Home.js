@@ -40,7 +40,7 @@ function Home() {
             </div>
           </aside>
 
-          <main className="flex-col mx-md-3 mt-sm-10">
+          <main className="flex-col mx-md-3 mt-sm-10 w-full">
             <RecentPostsSection />
           </main>
 
